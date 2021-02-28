@@ -1,31 +1,34 @@
 {
-  "npmScope": "hermes",
-  "affected": {
-    "defaultBase": "master"
-  },
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
+  "affected": { "defaultBase": "master" },
+  "npmScope": "hermes",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
-  "projects": {}
+  "projects": {
+    "admin-dashboard": { "tags": [] },
+    "admin-dashboard-e2e": {
+      "tags": [],
+      "implicitDependencies": ["admin-dashboard"]
+    },
+    "politics": { "tags": [] },
+    "politics-e2e": { "tags": [], "implicitDependencies": ["politics"] },
+    "landing-page": { "tags": [] },
+    "landing-page-e2e": {
+      "tags": [],
+      "implicitDependencies": ["landing-page"]
+    },
+    "access": { "tags": [] },
+    "access-e2e": { "tags": [], "implicitDependencies": ["access"] }
+  }
 }

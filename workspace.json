@@ -1,10 +1,447 @@
 {
-  
-  
   "version": 2,
-  
-  "projects": {},
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/react"
+  },
+  "defaultProject": "admin-dashboard",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "none",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "none"
+      },
+      "library": {
+        "style": "none",
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "styl",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "styl",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "styl"
+    }
+  },
+  "projects": {
+    "admin-dashboard": {
+      "root": "apps/admin-dashboard",
+      "sourceRoot": "apps/admin-dashboard/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/admin-dashboard",
+            "index": "apps/admin-dashboard/src/index.html",
+            "main": "apps/admin-dashboard/src/main.tsx",
+            "polyfills": "apps/admin-dashboard/src/polyfills.ts",
+            "tsConfig": "apps/admin-dashboard/tsconfig.app.json",
+            "assets": [
+              "apps/admin-dashboard/src/favicon.ico",
+              "apps/admin-dashboard/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin-dashboard/src/environments/environment.ts",
+                  "with": "apps/admin-dashboard/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "admin-dashboard:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "admin-dashboard:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/admin-dashboard/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/admin-dashboard"
+          ],
+          "options": {
+            "jestConfig": "apps/admin-dashboard/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "admin-dashboard-e2e": {
+      "root": "apps/admin-dashboard-e2e",
+      "sourceRoot": "apps/admin-dashboard-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/admin-dashboard-e2e/cypress.json",
+            "tsConfig": "apps/admin-dashboard-e2e/tsconfig.e2e.json",
+            "devServerTarget": "admin-dashboard:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "admin-dashboard:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/admin-dashboard-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "politics": {
+      "projectType": "application",
+      "root": "apps/politics",
+      "sourceRoot": "apps/politics/src",
+      "targets": {
+        "build": {
+          "executor": "@nxext/svelte:build",
+          "options": {
+            "outputPath": "dist\\apps\\politics",
+            "entryFile": "apps\\politics\\src\\main.ts",
+            "tsConfig": "apps\\politics\\tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "/*",
+                "input": "./public/**",
+                "output": "./"
+              }
+            ]
+          },
+          "configurations": {
+            "production": {
+              "dev": false
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nxext/svelte:build",
+          "options": {
+            "outputPath": "dist\\apps\\politics",
+            "entryFile": "apps\\politics\\src\\main.ts",
+            "tsConfig": "apps\\politics\\tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "/*",
+                "input": "./public/**",
+                "output": "./"
+              }
+            ],
+            "watch": true,
+            "serve": true
+          },
+          "configurations": {
+            "production": {
+              "prod": true
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": "apps\\politics\\tsconfig.app.json",
+            "exclude": [
+              "**/node_modules/**",
+              "!apps\\politics\\**\\*"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps\\politics\\jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "politics-e2e": {
+      "root": "apps/politics-e2e",
+      "sourceRoot": "apps/politics-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/politics-e2e/cypress.json",
+            "tsConfig": "apps/politics-e2e/tsconfig.e2e.json",
+            "devServerTarget": "politics:serve",
+            "baseUrl": "http://localhost:5000"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "politics:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/politics-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "landing-page": {
+      "projectType": "application",
+      "root": "apps/landing-page",
+      "sourceRoot": "apps/landing-page/src",
+      "targets": {
+        "build": {
+          "executor": "@nx-plus/vue:browser",
+          "options": {
+            "dest": "dist/apps/landing-page",
+            "index": "apps/landing-page/public/index.html",
+            "main": "apps/landing-page/src/main.ts",
+            "tsConfig": "apps/landing-page/tsconfig.app.json"
+          },
+          "configurations": {
+            "production": {
+              "mode": "production",
+              "filenameHashing": true,
+              "productionSourceMap": true,
+              "css": {
+                "extract": true,
+                "sourceMap": false
+              }
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nx-plus/vue:dev-server",
+          "options": {
+            "browserTarget": "landing-page:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "landing-page:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/landing-page/**/*.{ts,tsx,vue}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/landing-page"
+          ],
+          "options": {
+            "jestConfig": "apps/landing-page/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "landing-page-e2e": {
+      "root": "apps/landing-page-e2e",
+      "sourceRoot": "apps/landing-page-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/landing-page-e2e/cypress.json",
+            "tsConfig": "apps/landing-page-e2e/tsconfig.e2e.json",
+            "devServerTarget": "landing-page:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "landing-page:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/landing-page-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "access": {
+      "projectType": "application",
+      "root": "apps/access",
+      "sourceRoot": "apps/access/src",
+      "prefix": "hermes",
+      "targets": {
+        "build": {
+          "executor": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/access",
+            "index": "apps/access/src/index.html",
+            "main": "apps/access/src/main.ts",
+            "polyfills": "apps/access/src/polyfills.ts",
+            "tsConfig": "apps/access/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/access/src/favicon.ico",
+              "apps/access/src/assets"
+            ],
+            "styles": [
+              "apps/access/src/styles.styl"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/access/src/environments/environment.ts",
+                  "with": "apps/access/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "access:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "access:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "access:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/access/src/**/*.ts",
+              "apps/access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/access"
+          ],
+          "options": {
+            "jestConfig": "apps/access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "access-e2e": {
+      "root": "apps/access-e2e",
+      "sourceRoot": "apps/access-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/access-e2e/cypress.json",
+            "tsConfig": "apps/access-e2e/tsconfig.e2e.json",
+            "devServerTarget": "access:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "access:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/access-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    }
   }
 }
