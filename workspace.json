@@ -442,6 +442,108 @@
           }
         }
       }
+    },
+    "data-access": {
+      "root": "libs/data-access",
+      "sourceRoot": "libs/data-access/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/data-access/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/data-access"
+          ],
+          "options": {
+            "jestConfig": "libs/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-ui-vue-landings": {
+      "root": "libs/shared/ui-vue-landings",
+      "sourceRoot": "libs/shared/ui-vue-landings/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui-vue-landings/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/ui-vue-landings"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/ui-vue-landings/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-ui-react-common": {
+      "root": "libs/shared/ui-react-common",
+      "sourceRoot": "libs/shared/ui-react-common/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui-react-common/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/ui-react-common"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/ui-react-common/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-ui-angular-common-forms": {
+      "projectType": "library",
+      "root": "libs/shared/ui-angular-common-forms",
+      "sourceRoot": "libs/shared/ui-angular-common-forms/src",
+      "prefix": "hermes",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui-angular-common-forms/src/**/*.ts",
+              "libs/shared/ui-angular-common-forms/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/ui-angular-common-forms"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/ui-angular-common-forms/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

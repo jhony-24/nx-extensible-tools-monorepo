@@ -29,6 +29,10 @@
       "implicitDependencies": ["landing-page"]
     },
     "access": { "tags": [] },
-    "access-e2e": { "tags": [], "implicitDependencies": ["access"] }
+    "access-e2e": { "tags": [], "implicitDependencies": ["access"] },
+    "data-access": { "tags": [] },
+    "shared-ui-vue-landings": { "tags": [] },
+    "shared-ui-react-common": { "tags": [] },
+    "shared-ui-angular-common-forms": { "tags": [] }
   }
 }

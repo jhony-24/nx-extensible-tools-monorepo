@@ -14,7 +14,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@hermes/data-access": ["libs/data-access/src/index.ts"],
+      "@hermes/shared/ui-vue-landings": [
+        "libs/shared/ui-vue-landings/src/index.ts"
+      ],
+      "@hermes/shared/ui-react-common": [
+        "libs/shared/ui-react-common/src/index.ts"
+      ],
+      "@hermes/shared/ui-angular-common-forms": [
+        "libs/shared/ui-angular-common-forms/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
