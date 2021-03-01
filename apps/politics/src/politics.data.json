@@ -1,0 +1,41 @@
+{
+  "links" : [
+    {
+      "text" : "Privacity",
+      "link" : "/privacity"
+    },
+    {
+      "text" : "Account Settings",
+      "link" : "/settings"
+    },
+    {
+      "text" : "Ad preferences",
+      "link" : "/preferences"
+    },
+    {
+      "text" : "Safety",
+      "link" : "/safety"
+    },
+    {
+      "text" : "Legal and policies",
+      "link" : "/policies"
+    },
+    {
+      "text" : "Your information",
+      "link" : "/information"
+    },
+    {
+      "text" : "Cookies",
+      "link" : "/cookies"
+    }
+  ],
+  "content" : {
+    "/privacity" : "",
+    "/settings" : "",
+    "/preferences" : "",
+    "/safety" : "",
+    "/policies" : "",
+    "/information" : "",
+    "/cookies" : ""
+  }
+}
