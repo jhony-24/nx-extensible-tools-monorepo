@@ -24,7 +24,9 @@
       ],
       "@hermes/shared/ui-angular-common-forms": [
         "libs/shared/ui-angular-common-forms/src/index.ts"
-      ]
+      ],
+      "@hermes/utils/date-formats": ["libs/utils/date-formats/src/index.ts"],
+      "@hermes/utils/money-formats": ["libs/utils/money-formats/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

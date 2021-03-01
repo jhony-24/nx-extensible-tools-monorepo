@@ -7,5 +7,7 @@ module.exports = {
     '<rootDir>/libs/shared/ui-vue-landings',
     '<rootDir>/libs/shared/ui-react-common',
     '<rootDir>/libs/shared/ui-angular-common-forms',
+    '<rootDir>/libs/utils/date-formats',
+    '<rootDir>/libs/utils/money-formats',
   ],
 };

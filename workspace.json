@@ -1,23 +1,12 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
+  "cli": { "defaultCollection": "@nrwl/react" },
   "defaultProject": "admin-dashboard",
   "generators": {
     "@nrwl/react": {
-      "application": {
-        "style": "none",
-        "linter": "eslint",
-        "babel": true
-      },
-      "component": {
-        "style": "none"
-      },
-      "library": {
-        "style": "none",
-        "linter": "eslint"
-      }
+      "application": { "style": "none", "linter": "eslint", "babel": true },
+      "component": { "style": "none" },
+      "library": { "style": "none", "linter": "eslint" }
     },
     "@nrwl/angular:application": {
       "style": "styl",
@@ -30,9 +19,7 @@
       "linter": "eslint",
       "unitTestRunner": "jest"
     },
-    "@nrwl/angular:component": {
-      "style": "styl"
-    }
+    "@nrwl/angular:component": { "style": "styl" }
   },
   "projects": {
     "admin-dashboard": {
@@ -42,9 +29,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/admin-dashboard",
             "index": "apps/admin-dashboard/src/index.html",
@@ -86,28 +71,20 @@
         },
         "serve": {
           "executor": "@nrwl/web:dev-server",
-          "options": {
-            "buildTarget": "admin-dashboard:build"
-          },
+          "options": { "buildTarget": "admin-dashboard:build" },
           "configurations": {
-            "production": {
-              "buildTarget": "admin-dashboard:build:production"
-            }
+            "production": { "buildTarget": "admin-dashboard:build:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/admin-dashboard/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/admin-dashboard/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/admin-dashboard"
-          ],
+          "outputs": ["coverage/apps/admin-dashboard"],
           "options": {
             "jestConfig": "apps/admin-dashboard/jest.config.js",
             "passWithNoTests": true
@@ -136,9 +113,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/admin-dashboard-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/admin-dashboard-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -154,19 +129,9 @@
             "outputPath": "dist\\apps\\politics",
             "entryFile": "apps\\politics\\src\\main.ts",
             "tsConfig": "apps\\politics\\tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "/*",
-                "input": "./public/**",
-                "output": "./"
-              }
-            ]
+            "assets": [{ "glob": "/*", "input": "./public/**", "output": "./" }]
           },
-          "configurations": {
-            "production": {
-              "dev": false
-            }
-          }
+          "configurations": { "production": { "dev": false } }
         },
         "serve": {
           "executor": "@nxext/svelte:build",
@@ -175,30 +140,19 @@
             "entryFile": "apps\\politics\\src\\main.ts",
             "tsConfig": "apps\\politics\\tsconfig.app.json",
             "assets": [
-              {
-                "glob": "/*",
-                "input": "./public/**",
-                "output": "./"
-              }
+              { "glob": "/*", "input": "./public/**", "output": "./" }
             ],
             "watch": true,
             "serve": true
           },
-          "configurations": {
-            "production": {
-              "prod": true
-            }
-          }
+          "configurations": { "production": { "prod": true } }
         },
         "lint": {
           "executor": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
             "tsConfig": "apps\\politics\\tsconfig.app.json",
-            "exclude": [
-              "**/node_modules/**",
-              "!apps\\politics\\**\\*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps\\politics\\**\\*"]
           }
         },
         "test": {
@@ -224,18 +178,12 @@
             "baseUrl": "http://localhost:5000"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "politics:serve:production"
-            }
+            "production": { "devServerTarget": "politics:serve:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/politics-e2e/**/*.{js,ts}"
-            ]
-          }
+          "options": { "lintFilePatterns": ["apps/politics-e2e/**/*.{js,ts}"] }
         }
       }
     },
@@ -257,37 +205,26 @@
               "mode": "production",
               "filenameHashing": true,
               "productionSourceMap": true,
-              "css": {
-                "extract": true,
-                "sourceMap": false
-              }
+              "css": { "extract": true, "sourceMap": false }
             }
           }
         },
         "serve": {
           "executor": "@nx-plus/vue:dev-server",
-          "options": {
-            "browserTarget": "landing-page:build"
-          },
+          "options": { "browserTarget": "landing-page:build" },
           "configurations": {
-            "production": {
-              "browserTarget": "landing-page:build:production"
-            }
+            "production": { "browserTarget": "landing-page:build:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/landing-page/**/*.{ts,tsx,vue}"
-            ]
+            "lintFilePatterns": ["apps/landing-page/**/*.{ts,tsx,vue}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/landing-page"
-          ],
+          "outputs": ["coverage/apps/landing-page"],
           "options": {
             "jestConfig": "apps/landing-page/jest.config.js",
             "passWithNoTests": true
@@ -308,17 +245,13 @@
             "devServerTarget": "landing-page:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "landing-page:serve:production"
-            }
+            "production": { "devServerTarget": "landing-page:serve:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/landing-page-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/landing-page-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -338,13 +271,8 @@
             "polyfills": "apps/access/src/polyfills.ts",
             "tsConfig": "apps/access/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/access/src/favicon.ico",
-              "apps/access/src/assets"
-            ],
-            "styles": [
-              "apps/access/src/styles.styl"
-            ],
+            "assets": ["apps/access/src/favicon.ico", "apps/access/src/assets"],
+            "styles": ["apps/access/src/styles.styl"],
             "scripts": []
           },
           "configurations": {
@@ -379,20 +307,14 @@
         },
         "serve": {
           "executor": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "access:build"
-          },
+          "options": { "browserTarget": "access:build" },
           "configurations": {
-            "production": {
-              "browserTarget": "access:build:production"
-            }
+            "production": { "browserTarget": "access:build:production" }
           }
         },
         "extract-i18n": {
           "executor": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "access:build"
-          }
+          "options": { "browserTarget": "access:build" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -405,9 +327,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/access"
-          ],
+          "outputs": ["coverage/apps/access"],
           "options": {
             "jestConfig": "apps/access/jest.config.js",
             "passWithNoTests": true
@@ -428,18 +348,12 @@
             "devServerTarget": "access:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "access:serve:production"
-            }
+            "production": { "devServerTarget": "access:serve:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/access-e2e/**/*.{js,ts}"
-            ]
-          }
+          "options": { "lintFilePatterns": ["apps/access-e2e/**/*.{js,ts}"] }
         }
       }
     },
@@ -451,16 +365,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/data-access/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["libs/data-access/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/data-access"
-          ],
+          "outputs": ["coverage/libs/data-access"],
           "options": {
             "jestConfig": "libs/data-access/jest.config.js",
             "passWithNoTests": true
@@ -483,9 +393,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/ui-vue-landings"
-          ],
+          "outputs": ["coverage/libs/shared/ui-vue-landings"],
           "options": {
             "jestConfig": "libs/shared/ui-vue-landings/jest.config.js",
             "passWithNoTests": true
@@ -508,9 +416,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/ui-react-common"
-          ],
+          "outputs": ["coverage/libs/shared/ui-react-common"],
           "options": {
             "jestConfig": "libs/shared/ui-react-common/jest.config.js",
             "passWithNoTests": true
@@ -535,11 +441,53 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/ui-angular-common-forms"
-          ],
+          "outputs": ["coverage/libs/shared/ui-angular-common-forms"],
           "options": {
             "jestConfig": "libs/shared/ui-angular-common-forms/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "utils-date-formats": {
+      "root": "libs/utils/date-formats",
+      "sourceRoot": "libs/utils/date-formats/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/utils/date-formats/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/utils/date-formats"],
+          "options": {
+            "jestConfig": "libs/utils/date-formats/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "utils-money-formats": {
+      "root": "libs/utils/money-formats",
+      "sourceRoot": "libs/utils/money-formats/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/utils/money-formats/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/utils/money-formats"],
+          "options": {
+            "jestConfig": "libs/utils/money-formats/jest.config.js",
             "passWithNoTests": true
           }
         }

@@ -33,6 +33,8 @@
     "data-access": { "tags": [] },
     "shared-ui-vue-landings": { "tags": [] },
     "shared-ui-react-common": { "tags": [] },
-    "shared-ui-angular-common-forms": { "tags": [] }
+    "shared-ui-angular-common-forms": { "tags": [] },
+    "utils-date-formats": { "tags": [] },
+    "utils-money-formats": { "tags": [] }
   }
 }
