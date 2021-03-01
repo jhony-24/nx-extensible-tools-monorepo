@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "start-apps" : "scripty",
     "nx": "nx",
     "start": "nx serve",
     "build": "nx build",
@@ -96,6 +97,7 @@
     "jest-serializer-vue": "^2.0.2",
     "jest-transform-stub": "^2.0.0",
     "prettier": "2.2.1",
+    "scripty": "^2.0.0",
     "svelte": "^3.32.3",
     "svelte-check": "^1.1.34",
     "svelte-jester": "^1.3.0",
