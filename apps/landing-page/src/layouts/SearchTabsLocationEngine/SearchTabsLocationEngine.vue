@@ -66,6 +66,7 @@ export default defineComponent({
 }
 .navigationtab {
   &__item {
+    cursor: pointer;
     display: flex;
     align-items: center;
     padding-left: 25px;
