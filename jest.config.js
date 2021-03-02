@@ -9,5 +9,7 @@ module.exports = {
     '<rootDir>/libs/shared/ui-angular-common-forms',
     '<rootDir>/libs/utils/date-formats',
     '<rootDir>/libs/utils/money-formats',
+    '<rootDir>/libs/shared/ui-theme',
+    '<rootDir>/libs/resources',
   ],
 };

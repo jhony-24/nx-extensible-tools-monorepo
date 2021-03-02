@@ -1,3 +1,4 @@
+import "@hermes/shared/ui-theme"
 import { createApp } from 'vue';
 import App from './App.vue';
 

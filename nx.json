@@ -35,6 +35,8 @@
     "shared-ui-react-common": { "tags": [] },
     "shared-ui-angular-common-forms": { "tags": [] },
     "utils-date-formats": { "tags": [] },
-    "utils-money-formats": { "tags": [] }
+    "utils-money-formats": { "tags": [] },
+    "shared-ui-theme": { "tags": [] },
+    "resources": { "tags": [] }
   }
 }

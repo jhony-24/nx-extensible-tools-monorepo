@@ -1,0 +1,9 @@
+:root {
+  --header-background-color:#000;
+  --primary-color:#FF385C;
+  --text-base-neutral-color:gray;
+  --text-base-color : #000;
+  --text-base-contrast-color : #FFF;
+  --card-light-color:#FFF;
+  --search-tabs-engine-background-color:#FFF;
+}
