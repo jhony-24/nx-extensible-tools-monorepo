@@ -1,1 +1,1 @@
-export { default as  airbnb_logo } from './airbnb_logo.png';
+export const airbnb_logo = require("./airbnb_logo.png");

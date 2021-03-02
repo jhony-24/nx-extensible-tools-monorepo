@@ -1,6 +1,7 @@
 <template>
   <header>
     <div class="header__logo">
+      <main-logo></main-logo>
     </div>
     <ul class="navigation">
       <li class="navigation__item">Places to day</li>
@@ -18,9 +19,12 @@
 
 <script>
 import { defineComponent } from "vue";
+import MainLogo from "../../components/MainLogo.vue";
 
 export default defineComponent({
-
+  components : {
+    MainLogo
+  }
 })
 </script>
 
