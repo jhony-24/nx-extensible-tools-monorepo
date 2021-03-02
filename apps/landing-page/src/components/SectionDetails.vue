@@ -20,14 +20,15 @@ export default defineComponent({
   width: 90%;
   max-width: 1200px;
   margin: auto;
-  padding:20px 0;
+  padding:40px 0;
   text-align: left;
 }
 .detail {
   &__title {
     margin-bottom: 20px;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.8em;
+    color:var(--text-base-color);
   }
 }
 </style>

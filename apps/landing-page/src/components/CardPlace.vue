@@ -15,15 +15,16 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .card {
+  width:100%;
   &__image {
-    width: 200px;
-    height:200px;
+    width: 100%;
+    height:300px;
     object-fit: cover;
     border-radius: 10px;
   }
   &__text {
     font-weight: bold;
-    font-size: .9em;
+    font-size: 1em;
     margin-top: 5px;
   }
 }
