@@ -7,12 +7,13 @@
   </background-banner>
   <section-details title="Explore nearby">
     <div class="wrapper--nearby">
-      <card-place
-        v-for="(item, key) in cardsAnywhere"
+      <micro-card-place
+        v-for="(item, key) in cardsNearby"
         :key="key"
         :image="item.image"
-        :text="item.text"
-      ></card-place>
+        :title="item.text"
+        :detail="item.detail"
+      ></micro-card-place>
     </div>
   </section-details>
   <section-details title="Live anywhere">
@@ -30,6 +31,7 @@
 <script>
 import { defineComponent } from 'vue';
 import CardPlace from './components/CardPlace.vue';
+import MicroCardPlace from './components/MicroCardPlace.vue';
 import SectionDetails from './components/SectionDetails.vue';
 import BackgroundBanner from './layouts/BackgroundBanner/BackgroundBanner.vue';
 import HeaderMainNavigator from './layouts/HeaderMainNavigation/HeaderMainNavigator.vue';
@@ -43,6 +45,7 @@ export default defineComponent({
     SearchTabsLocationEngine,
     SectionDetails,
     CardPlace,
+    MicroCardPlace
   },
   setup() {
     const cardsAnywhere = [
@@ -68,8 +71,14 @@ export default defineComponent({
       },
     ];
 
+    let cardsNearby = cardsAnywhere.map(item => ({
+      ...item,
+      detail : "4 hours drive"
+    }));
+    cardsNearby = [ ...cardsNearby, ...cardsNearby ]
     return {
       cardsAnywhere,
+      cardsNearby
     };
   },
 });
@@ -85,11 +94,11 @@ body {
   margin: 0;
 }
 
-@mixin grid($name) {
+@mixin grid($name,$gap : 10px) {
     &--#{$name} {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+      gap: $gap;
       @content;
     };
 }
@@ -100,7 +109,7 @@ body {
   color: #2c3e50;
 }
 .wrapper {
-  @include grid("nearby");
+  @include grid("nearby",25px);
   @include grid("anywhere");
 }
 </style>
