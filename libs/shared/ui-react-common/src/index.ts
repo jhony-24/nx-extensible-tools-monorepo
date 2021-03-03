@@ -1,1 +1,1 @@
-export * from './lib/shared-ui-react-common';
+export * from './lib/BaseButton';
