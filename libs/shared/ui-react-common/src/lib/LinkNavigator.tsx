@@ -4,9 +4,9 @@ type LinkNavigatorProps = {
     onClick ?: (to : string) => void,
     children : React.ReactNode,
     to ?: string,
-    variant ?: "flat" | "primary" | "secondary"
 }
-function LinkNavigator({children,onClick,to,variant} : LinkNavigatorProps) {
+
+export function LinkNavigator({children,onClick,to} : LinkNavigatorProps) {
     const handlerOnClick = () => {
       onClick && onClick(to);
     }
@@ -16,5 +16,3 @@ function LinkNavigator({children,onClick,to,variant} : LinkNavigatorProps) {
       </button>
     )
 }
-
-export default LinkNavigator;

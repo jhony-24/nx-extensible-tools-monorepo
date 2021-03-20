@@ -1,10 +1,20 @@
 import React from 'react';
-
-import { ReactComponent as Logo } from './logo.svg';
-import star from './star.svg';
+import { fetchMoneyList } from '@hermes/data-access';
+import { BaseButton } from '@hermes/shared/ui-react-common';
+import { formatMoneyInSoles } from '@hermes/utils/money-formats';
 
 export function App() {
-  return <h1>Welcome to admin-dashboard!</h1>;
+  return (
+    <section>
+      {fetchMoneyList().map((item) => {
+        return (
+          <BaseButton key={item.id}>
+            {formatMoneyInSoles(item.money)}
+          </BaseButton>
+        );
+      })}
+    </section>
+  );
 }
 
 export default App;
