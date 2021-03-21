@@ -1,9 +1,9 @@
-# Hermes - monorepo
+# Hermes - example monorepo 
 
 
 <p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
-This project was generated using [Nx](https://nx.dev) to create a monorepo with extensible dev tools.
+This project was generated using [Nx](https://nx.dev) to create a monorepo with extensible dev tools with diferents technologies.
 
 ## Adding capabilities to your workspace
 
@@ -15,16 +15,15 @@ Below are our core plugins:
 
 - [React](https://reactjs.org)
   - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
+- [Vue](https://www.npmjs.com/package/@nx-plus/vue)
+  - `npm install @nx-plus/vue --save-dev`
+- [Svelte](https://www.npmjs.com/package/@nxext/svelte)
+  - `npm install @nxext/svelte --save-dev`
 - [Angular](https://angular.io)
   - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+- Web (no framework frontends)
+  - `npm install --save-dev @nrwl/web`
+
 
 There are also many [community plugins](https://nx.dev/nx-community) you could add.
 
